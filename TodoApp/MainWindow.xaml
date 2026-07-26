@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:TodoApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    
     <Grid Margin="15">
         <!-- Grid.RowDefinitions: 화면을 위/아래 두 구역으로 나눔
          Auto = 내용물 크기만큼만 차지, * = 남는 공간을 전부 차지 -->
