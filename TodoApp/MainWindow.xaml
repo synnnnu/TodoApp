@@ -1,0 +1,28 @@
+﻿<Window x:Class="TodoApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TodoApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <!-- StackPanel: 자식 요소들을 세로(또는 가로)로 순서대로 쌓아주는 레이아웃 -->
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <!-- 텍스트를 보여주는 라벨. x:Name으로 이름을 지정하면 코드에서 이 요소를 참조 가능 -->
+            <TextBlock x:Name="GreetingText"
+                       Text="버튼을 눌러보세요"
+                       FontSize="20"
+                       Margin="0, 0, 0, 10" />
+
+            <!-- 버튼. Click = 클릭했을 때 실행할 함수 이름 -->
+            <Button Content="눌러줘"
+                    Click="MyButton_Click"
+                    Width="100"
+                    Height="30" />
+
+        </StackPanel>
+
+    </Grid>
+</Window>
