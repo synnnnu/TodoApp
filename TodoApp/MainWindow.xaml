@@ -6,23 +6,28 @@
         xmlns:local="clr-namespace:TodoApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <!-- StackPanel: 자식 요소들을 세로(또는 가로)로 순서대로 쌓아주는 레이아웃 -->
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid Margin="15">
+        <!-- Grid.RowDefinitions: 화면을 위/아래 두 구역으로 나눔
+         Auto = 내용물 크기만큼만 차지, * = 남는 공간을 전부 차지 -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-            <!-- 텍스트를 보여주는 라벨. x:Name으로 이름을 지정하면 코드에서 이 요소를 참조 가능 -->
-            <TextBlock x:Name="GreetingText"
-                       Text="버튼을 눌러보세요"
-                       FontSize="20"
-                       Margin="0, 0, 0, 10" />
+        <!-- 상단: 입력창 + 추가 버튼 -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <!-- 할 일을 입력하는 텍스트박스. x:Name으로 이름 붙여서 코드에서 접근 -->
+            <TextBox x:Name="TaskInput" Width="250" Height="25"/>
 
-            <!-- 버튼. Click = 클릭했을 때 실행할 함수 이름 -->
-            <Button Content="눌러줘"
-                    Click="MyButton_Click"
-                    Width="100"
-                    Height="30" />
-
+            <!-- 추가 버튼. 클릭하면 AddButton_Click 함수 실행 -->
+            <Button Content="추가" 
+                Click="AddButton_Click" 
+                Width="60" 
+                Height="25" 
+                Margin="5,0,0,0"/>
         </StackPanel>
 
+        <!-- 하단: 할 일 목록이 표시될 리스트박스 -->
+        <ListBox x:Name="TaskListBox" Grid.Row="1"/>
     </Grid>
 </Window>
